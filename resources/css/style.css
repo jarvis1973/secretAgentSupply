@@ -1,33 +1,45 @@
 
-/* The HTML Section */
+/* The Global Section */
   html {
     font-size: 18px;
+    width: 1200px;
+  }
+
+  body {
     font-family: helvetica;
     color: white;
-    width: 1200px;
+  }
+
+  header, #banner, .description, .black, footer {
+    background-color: black;
+  }
+
+  #products, #shop {
+    display: flex;
+    justify-content: space-around;
+    margin: 3em 0 0 0;
   }
 
 /* The Header Section */
   header {
-    background-color: black;
     width: 100%;
   }
 
-  .logo {
+  #logo {
     padding-top: 0.66rem;
     padding-bottom: 0.66rem;
     position: relative;
     left: 12%;
   }
 
-  .logo img {
+  #logo img {
     height: 1.5rem;
     padding-left: 0.5rem;
     padding-right: 1rem;
     vertical-align: middle;
   }
 
-  .logo span {
+  #logo span {
     font-size: 1rem;
   }
 
@@ -40,27 +52,27 @@
     height: 25rem;
   }
 
-  section .arrival {
+  #banner {
     width: 20rem;
     padding: 2rem 3rem;
-    background-color: black;
     position: relative;
     left: 12%;
     top: 9rem;
   }
-  .arrival span, p {
+  #banner p {
     font-weight: bold;
-  }
-
-  .arrival p {
     font-size: 2rem;
     padding-top: 0.25rem;
   }
+
 /* The Navigation Section */
+  nav {
+    background-color: firebrick;
+  }
+
   ul {
     display: inline-flex;
     justify-content: space-around;
-    background-color: firebrick;
     width: 960px;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -73,43 +85,36 @@
     text-decoration: none;
   } /* use nav a to style each individual link white with no text decoration.  */
 
+  .mobile-nav {
+    display: none;
+  }
+
 /* The Main Section */
 
-  main {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 3em 0 0 0;
-  }
-
-  .item {
-    height: 30%;
+  .product {
     width: 30%;
+  }
+  .product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9em;
+    padding: 2em 0;
     border: 4px solid black;
-    margin-bottom: 3rem;
   }
 
-  .item img {
-    height: 9rem;
-    width: 9rem;
-    display: block;
-    margin: auto;
+  .product-image img {
+    max-width: 8em;
     }
 
-  .item p {
-    background-color: black;
+  .description {
+    display: block;
     padding: 0.5rem;
     text-align: center;
   }
+
 /* The Location and Hours Information */
-  .shop {
-    display: flex;
-    justify-content: space-between;
-    margin: 3em 0 0 0;
-  }
-
-
-  .info1, .info2 {
+  .info {
     width: 35%;
     padding-right: 10px;
   }
@@ -119,7 +124,6 @@
     padding-left: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: black;
   }
 
   .white {
@@ -127,11 +131,9 @@
   }
 
 /* The Footer Section */
-
   footer {
     height: 5rem;
     width: 100%;
-    background-color: black;
     display: flex;
     align-items: center;
     margin-top: 4rem;
@@ -143,14 +145,78 @@
     left: 12%;
   }
 
-  /* Tablet Media Query */
-
+/* Tablet Media Query max width: 1024 */
   @media only screen and (max-width: 1024px) {
+    body {
+      font-size: 16px;
+    }
+/* Navigation Section */
+    nav ul {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+      text-align: center;
+    }
+
+/* The Main Section */
+    main {
+      width: 47%;
+    }
+
+
+    main .glasses {
+      display: none;
+    }
 
   }
 
-  /* Phone Media Query */
-
+/* Phone Media Query max width: 470 */
   @media only screen and (max-width: 470px) {
+/* Section */
+    section {
+      height: 15em;
+    }
+
+    #banner {
+      width: 100%;
+      padding: 1em 2em;
+      top: 10em;
+    }
+
+    #new {
+      font-size: 0.77rem;
+    }
+
+    #banner p {
+      font-size: 1rem;
+    }
+
+/* The Main Section */
+    main {
+      width: 90%;
+      margin: auto;
+    }
+
+    .item .watch {
+      display: none;
+    }
+
+/* Location and time information */
+
+     main, #shop {
+      flex-wrap: wrap;
+    }
+
+    .info {
+      width: 90%;
+      margin: 0.5em auto;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+    }
 
   }
